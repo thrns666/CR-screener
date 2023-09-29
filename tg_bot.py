@@ -51,9 +51,6 @@ async def menu_button(bot: Bot):
 
 @dp.message(CommandStart())
 async def command_start(message: Message):
-    db.db_start(connection, message)
-    user = (message.from_user.id, message.from_user.username, message.date)
-    print(user)
     await message.answer(text='Hello, nice to meet u :)', parse_mode='HTML')
     await message.delete()
 
